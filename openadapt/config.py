@@ -42,7 +42,7 @@ _DEFAULTS = {
     "SCRUB_CHAR": "*",
     "SCRUB_LANGUAGE": "en",
     # TODO support lists in getenv_fallback
-    "SCRUB_FILL_COLOR": 0x0000FF, # BGR format
+    "SCRUB_FILL_COLOR": 0x0000FF,  # BGR format
     "SCRUB_CONFIG_TRF": {
         "nlp_engine_name": "spacy",
         "models": [{"lang_code": "en", "model_name": "en_core_web_trf"}],
@@ -87,6 +87,17 @@ _DEFAULTS = {
 
 
 def getenv_fallback(var_name):
+    """Get the value of an environment variable with fallback to default.
+
+    Args:
+        var_name (str): The name of the environment variable.
+
+    Returns:
+        str: The value of the environment variable or the default value if not found.
+
+    Raises:
+        ValueError: If the environment variable is not defined.
+    """
     rval = os.getenv(var_name) or _DEFAULTS.get(var_name)
     if rval is None:
         raise ValueError(f"{var_name=} not defined")
@@ -102,7 +113,10 @@ for key in _DEFAULTS:
 ROOT_DIRPATH = pathlib.Path(__file__).parent.parent.resolve()
 DB_FPATH = ROOT_DIRPATH / DB_FNAME  # type: ignore # noqa
 DB_URL = f"sqlite:///{DB_FPATH}"
+DT_FMT = "%Y-%m-%d_%H-%M-%S"
 DIRNAME_PERFORMANCE_PLOTS = "performance"
+ZIPPED_RECORDING_FOLDER_PATH = ROOT_DIRPATH / "data" / "zipped"
+ENV_FILE_PATH = (ROOT_DIRPATH / ".env").resolve()
 
 
 def obfuscate(val, pct_reveal=0.1, char="*"):
@@ -147,3 +161,17 @@ def filter_log_messages(data):
         "Cannot pickle Objective-C objects",
     ]
     return not any(msg in data["message"] for msg in messages_to_ignore)
+
+
+def set_db_url(db_fname):
+    """Set the database URL based on the given database file name.
+
+    Args:
+        db_fname (str): The database file name.
+    """
+    global DB_FNAME, DB_FPATH, DB_URL
+    DB_FNAME = db_fname
+    DB_FPATH = ROOT_DIRPATH / DB_FNAME
+    DB_URL = f"sqlite:///{DB_FPATH}"
+    logger.info(f"{DB_URL=}")
+    os.environ["DB_FNAME"] = db_fname
