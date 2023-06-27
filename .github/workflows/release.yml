@@ -3,9 +3,9 @@ on:
   push:
     branches:
       - main
-  
 jobs:
   release:
+    if: github.event.pull_request.merged == true && github.event.pull_request.merge_commit_sha != null
     runs-on: ubuntu-latest
     concurrency: release
     steps:
