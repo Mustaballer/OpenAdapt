@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.1 (2023-06-27)
+
+### Fix
+
+* **deploy:** Remove unnecessary if statement ([`582440b`](https://github.com/Mustaballer/puterbot/commit/582440b004f269a52d093e33598c4a42a94e8308))
+
 ## v0.2.0 (2023-06-27)
 
 ### Feature
