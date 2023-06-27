@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.0 (2023-06-27)
+
+### Feature
+
+* **release:** Test if changing PR name works with python semantic release ([#8](https://github.com/Mustaballer/puterbot/issues/8)) ([`70356f9`](https://github.com/Mustaballer/puterbot/commit/70356f9e63c56b3b947044355ea053b881b2239e))
+
 ## v0.2.1 (2023-06-27)
 
 ### Fix
