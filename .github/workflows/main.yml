@@ -1,4 +1,4 @@
-name: Python CI
+name: Test CI
 'on':
   pull_request_target:
     branches:
