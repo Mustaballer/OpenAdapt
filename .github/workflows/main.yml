@@ -4,15 +4,8 @@ name: Python CI
     branches:
       - '**'
 jobs:
-  run-ci:
-    runs-on: '${{ matrix.os }}'
-    defaults:
-      run:
-        shell: bash
-    strategy:
-      matrix:
-        os:
-          - macos-latest
+  run-ci-test:
+    runs-on: macos-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -37,6 +30,4 @@ jobs:
       - name: Check formatting with Black
         run: poetry run black --preview --check .
       - name: Run Flake8
-        run: |
-          poetry shell
-          poetry run flake8 .
+        run: poetry run flake8 .
