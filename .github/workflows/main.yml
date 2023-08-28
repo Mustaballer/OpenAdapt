@@ -30,6 +30,6 @@ jobs:
         if: matrix.os == 'macos-latest'
         run: |
           sh install/install_openadapt.sh
-          SKIP_POETRY_SHELL=1
           REPO="${{ github.event.pull_request.head.repo.full_name }}"  # Using full_name for repository
           BRANCH="${{ github.event.pull_request.head.ref }}"  # Using ref for branch
+          SKIP_POETRY_SHELL=1
