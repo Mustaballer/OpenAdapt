@@ -29,7 +29,7 @@ jobs:
       - name: Run tests using the shell script (macOS compatible).
         if: matrix.os == 'macos-latest'
         run: |
-          sh install/install_openadapt.sh
-          REPO="${{ github.event.pull_request.head.repo.full_name }}"  # Using full_name for repository
-          BRANCH="${{ github.event.pull_request.head.ref }}"  # Using ref for branch
+          REPO="${{ github.event.pull_request.head.repo.full_name }}"
+          BRANCH="${{ github.event.pull_request.head.ref }}"
           SKIP_POETRY_SHELL=1
+          sh install/install_openadapt.sh
