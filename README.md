@@ -277,7 +277,7 @@ To set up the pre-commit hooks, follow these steps:
 pre-commit install
 ```
 
-Now, the pre-commit hooks are installed and will run automatically before each commit. They will enforce code quality standards and prevent committing code that doesn't pass the defined checks.
+Now, the pre-commit hooks are installed and will run automatically before each commit. They will enforce code quality standards and prevent committing code that doesn't pass the defined checks. Please ensure to use the `black --preview .` if running black manually.
 
 # Submitting an Issue
 
