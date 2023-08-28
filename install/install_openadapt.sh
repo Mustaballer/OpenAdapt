@@ -10,8 +10,8 @@ pythonVerStr="Python 3.10*"
 pythonInstallerLoc="https://www.python.org/ftp/python/3.10.11/python-3.10.11-macos11.pkg"
 
 # Set default values or use provided values
-# BRANCH=${BRANCH:-main}
-# REPO=${REPO:-https://github.com/MLDSAI/OpenAdapt.git}
+BRANCH=${BRANCH:-main}
+REPO=${REPO:-https://github.com/MLDSAI/OpenAdapt.git}
 
 ################################ HELPER FUNCTIONS ################################
 
