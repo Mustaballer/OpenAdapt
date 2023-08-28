@@ -129,7 +129,7 @@ Visualize the latest recording you created by running the following command:
 python -m openadapt.visualize
 ```
 
-This will open your browser. It will look something like this:
+This will open your browser. It will look like this:
 
 ![image](https://github.com/OpenAdaptAI/OpenAdapt/assets/774615/5d7253b7-ae12-477c-94a3-b388e4f37587)
 
@@ -277,7 +277,7 @@ To set up the pre-commit hooks, follow these steps:
 pre-commit install
 ```
 
-Now, the pre-commit hooks are installed and will run automatically before each commit. They will enforce code quality standards and prevent committing code that doesn't pass the defined checks.
+Now, the pre-commit hooks are installed and will run automatically before each commit. They will enforce code quality standards and prevent committing code that doesn't pass the defined checks. Please ensure to use the `black --preview .` if running black manually.
 
 # Submitting an Issue
 
