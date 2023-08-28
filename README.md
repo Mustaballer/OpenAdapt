@@ -129,7 +129,7 @@ Visualize the latest recording you created by running the following command:
 python -m openadapt.visualize
 ```
 
-This will open your browser. It will look something like this:
+This will open your browser. It will look like this:
 
 ![image](https://github.com/OpenAdaptAI/OpenAdapt/assets/774615/5d7253b7-ae12-477c-94a3-b388e4f37587)
 
